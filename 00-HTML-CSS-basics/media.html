@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media</title>
+  <script src="js/modernizr-custom.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Media</h1>
+    <div>
+      <p>Image</p>
+      <img src="media/css.jpg" title="CSS Coding" alt="CSS Coding" width="480" height="320">
+    </div>
+    <div id="video-container">
+      <p>Video</p>
+    </div>
+    <div>
+      <p>Audio</p>
+      <audio controls preload="none">
+        <source src="media/film.mp3" type="audio/mpeg">
+        <source src="media/film.aac" type="audio/mp4">
+        <source src="media/film.ogg" type="audio/ogg">
+        <source src="media/film.wav" type="audio/wav">
+        <p>Your browser can't play audio... sorry!</p>
+      </audio>
+    </div>
+    <h2>Sign Up</h2>
+    <div>
+      <form>
+        <div>
+          <label for="first-name">First Name</label>
+          <input id="first-name" type="text" required>
+        </div>
+        <div>
+          <label for="last-name">Last Name</label>
+          <input id="last-name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="text" required>
+        </div>
+        <div>
+          <label for="birthday">Birthday</label>
+          <input id="birthday" type="text">
+        </div>
+        <div>
+          <label for="favorite-sport">Favorite Sport</label>
+          <select id="favorite-sport">
+            <option value="soccer">Soccer</option>
+            <option value="baseball">Baseball</option>
+            <option value="basketball">Basketball</option>
+            <option value="american_football">American Football</option>
+          </select>
+        </div>
+        <div>
+          <label for="bio">Bio</label>
+          <textarea id="bio"></textarea>
+        </div>
+        <div>
+          <input id="button-send" type="submit" value="Send">
+          <input id="button-reset" type="reset" value="Clear">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript">
+  if (Modernizr) {
+    // birthday check
+    if (Modernizr.inputtypes.date) {
+      document.getElementById("birthday").type = "date";
+    }
+    // email check
+    if (Modernizr.inputtypes.email) {
+      document.getElementById("email").type = "email";
+    }
+    // video check
+    var elem = null;
+    if (Modernizr.video) {
+      console.log('lets play some video! but what kind?');
+      elem = document.createElement("video");
+      // A 16:9 resolution sizes
+      elem.width = 640;
+      elem.height = 360;
+      elem.controls = true;
+      elem.preload = "metadata";
+      if (Modernizr.video.webm) {
+        console.log('try WebM');
+        elem.src = "media/sky.webm";
+      } else if (Modernizr.video.ogg) {
+        console.log('try Ogg Theora + Vorbis in an Ogg container');
+        elem.src = "media/sky.ogv";
+      } else if (Modernizr.video.h264){
+        console.log('try H.264 video + AAC audio in an MP4 container');
+        elem.src = "media/sky.mp4";
+      }
+    } else {
+      elem = document.createElement("p");
+      elem.innerHTML = "Your browser can't play video... sorry!";
+    }
+    console.log(elem);
+    document.getElementById("video-container").appendChild(elem);
+  }
+  </script>
+</body>
+</html>
