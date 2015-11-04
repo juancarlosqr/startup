@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My todo list</title>
-</head>
-<body>
-  <h1>My todo list</h1>
-  <ul>
-    <li>Read about HTML and CSS</li>
-    <li>Do the exercises</li>
-    <li>Commit the work at the end of the day</li>
-  </ul>
-</body>
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HTML & CSS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->      
+    <header class="container header">Header</header>
+    <section class="grid">
+      <nav class="navigation col-1-3">Navigation</nav><section class="content col-1-3">
+        <header class="header">Title</header>
+        <article>Main content</article>
+        <footer class="footer">Content footer</footer>
+      </section><aside class="sidebar col-1-3">Related articles</aside>
+    </section>
+    <footer class="container footer">Copyright</footer>
+  </body>
 </html>
