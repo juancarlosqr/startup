@@ -23,17 +23,17 @@ var UserGist = React.createClass({
   render: function() {
     return (
       <div>
-        <p><strong>Github</strong></p>
+        <p><strong>Async Github</strong></p>
         <p>
           Last gist of {this.state.username} is {' '}
           <a href={this.state.lastGistUrl} target="_blank">{this.state.lastGistDesc}</a>
         </p>
         
-        <p>
+        <div>
           <div id={false} />
           <input value={false} />
           <div>{false}</div>
-        </p>
+        </div>
       </div>
     );
   }
